@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## 工具说明
 
-## Getting Started
+本工具用于辅助生成百度统计插件在 file 和 chrome-extension 等协议环境下【如：electron、chrome extension】能正常上报统计信息的本地插件文件。
 
-First, run the development server:
+## 项目说明
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+本项目在<https://github.com/krapnikkk/baidutongji-generator>的思路下，使用 nextjs + nextui 重构了页面，更现代化、精致一些，并将项目放在自己服务器上，避免 github 被墙导致的页面加载速度慢的问题。
+
+## 在线地址
+
+[点击打开](https://baidutongji.gotab.cn)
+
+## 使用说明
+
+将下载到的 hm.js 文件通过 script 标签的形式引入插件即可使用
+
+```
+<script type="text/javascript" src="hm.js"></script>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+在 chrome-extension 中需要在 manifest.json 中添加以下配置
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+"content_security_policy": "script-src 'self' 'unsafe-eval' https://hmcdn.baidu.com; object-src 'self'"
+```
