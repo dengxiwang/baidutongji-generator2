@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://baidutongji.gotab.cn
+
+# Sitemaps
+Sitemap: https://baidutongji.gotab.cn/sitemap.xml

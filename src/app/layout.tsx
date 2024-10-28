@@ -1,6 +1,7 @@
 import Provider from "@/components/provider";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Script from "next/script";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
@@ -36,6 +37,17 @@ export default function RootLayout({
 					{children}
 				</Provider>
 			</body>
+			<Script strategy="lazyOnload">
+				{`
+					var _hmt = _hmt || [];
+					(function() {
+						var hm = document.createElement("script");
+						hm.src = "https://hm.baidu.com/hm.js?85cc3e80cb956183bd917f7d32803b02";
+						var s = document.getElementsByTagName("script")[0];
+						s.parentNode.insertBefore(hm, s);
+					})();
+				`}
+			</Script>
 		</html>
 	);
 }
