@@ -94,13 +94,7 @@ export default function Home() {
 				<div className="flex items-center justify-between border-b bg-gray-800 text-white p-3 flex-wrap font-semibold gap-x-3 gap-y-1 text-base">
 					<div className="flex gap-x-1 items-center">
 						<img src="/logo.svg" className="bg-transparent w-[24px] h-[24px]" />
-						<div className="mr-3">百度统计插件生成器</div>
-						<iframe
-							src="https://ghbtns.com/github-btn.html?user=dengxiwang&repo=baidutongji-generator2&type=star"
-							width="90px"
-							height="21px"
-							className="border-none overflow-hidden"
-						/>
+						<div>百度统计插件生成器</div>
 					</div>
 					<Link
 						className="gap-1 mx-3 text-white"
@@ -181,6 +175,12 @@ export default function Home() {
 				</div>
 			</div>
 			<div className="flex-0 z-50 p-3 w-full flex justify-center border-t bg-white flex-wrap font-semibold gap-x-3">
+				<iframe
+					src="https://ghbtns.com/github-btn.html?user=dengxiwang&repo=baidutongji-generator2&type=star&count=false"
+					width="52.5px"
+					height="21px"
+					className="border-none overflow-hidden"
+				/>
 				<p>
 					本服务由
 					<Link size="sm" href="https://gotab.cn">
