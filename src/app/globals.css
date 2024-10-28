@@ -15,3 +15,7 @@ body {
 	width: 100vw;
 	font-size: 14px;
 }
+
+* {
+	overscroll-behavior: none !important;
+}
