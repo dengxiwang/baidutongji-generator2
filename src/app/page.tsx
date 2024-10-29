@@ -147,8 +147,9 @@ export default function Home() {
 										content: "点击复制",
 										color: "foreground",
 									}}
-									onCopy={(e) => {
-										console.log(e);
+									symbol=""
+									onCopy={() => {
+										toast.success("复制成功");
 									}}
 								>
 									<p className="whitespace-pre-wrap">{`<script type="text/javascript" src="hm.js"></script>`}</p>
@@ -161,6 +162,10 @@ export default function Home() {
 									tooltipProps={{
 										content: "点击复制",
 										color: "foreground",
+									}}
+									symbol=""
+									onCopy={() => {
+										toast.success("复制成功");
 									}}
 								>
 									<p className="whitespace-pre-wrap">{`"content_security_policy": "script-src 'self' 'unsafe-eval' https://hmcdn.baidu.com; object-src 'self'"`}</p>
