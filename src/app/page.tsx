@@ -188,7 +188,7 @@ export default function Home() {
 				/>
 				<p>
 					本服务由
-					<Link size="sm" href="https://gotab.cn">
+					<Link size="sm" href="https://www.gotab.cn">
 						©gotab.cn
 					</Link>
 					提供
