@@ -91,7 +91,7 @@ export default function Home() {
 	return (
 		<div className="flex flex-col h-full">
 			<div className="flex-1 flex flex-col h-full overflow-scroll">
-				<div className="flex items-center justify-between border-b bg-gray-800 text-white p-3 flex-wrap font-semibold gap-x-3 gap-y-1 text-base">
+				<div className="flex items-center sticky top-0 justify-between border-b bg-gray-800 text-white p-3 flex-wrap font-semibold gap-x-3 gap-y-1 text-base">
 					<div className="flex gap-x-1 items-center">
 						<img src="/logo.svg" className="bg-transparent w-[24px] h-[24px]" />
 						<div>百度统计插件生成器</div>
@@ -188,7 +188,7 @@ export default function Home() {
 				/>
 				<p>
 					本服务由
-					<Link size="sm" href="https://www.gotab.cn">
+					<Link size="sm" href="https://www.gotab.cn" target="_blank">
 						©gotab.cn
 					</Link>
 					提供
