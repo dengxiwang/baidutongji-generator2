@@ -1,21 +1,22 @@
 "use client";
+import BottomArea from "@/components/bottomArea";
+import Float from "@/components/float";
+import { toast } from "@/components/toast";
 import {
-	Button,
-	Code,
-	Link,
-	Modal,
-	ModalBody,
-	ModalContent,
-	ModalFooter,
-	ModalHeader,
-	Snippet,
-	Textarea,
-	useDisclosure,
-} from "@nextui-org/react";
+    Alert,
+    Button,
+    Code,
+    Modal,
+    ModalBody,
+    ModalContent,
+    ModalFooter,
+    ModalHeader,
+    Snippet,
+    Textarea,
+    useDisclosure,
+} from "@heroui/react";
 import Image from "next/image";
 import { useState } from "react";
-import toast from "react-hot-toast";
-import { AiOutlineLink } from "react-icons/ai";
 import { IoMdGitPullRequest } from "react-icons/io";
 import { TiExport } from "react-icons/ti";
 
@@ -90,30 +91,22 @@ export default function Home() {
 
 	return (
 		<div className="flex flex-col h-full">
-			<div className="flex-1 flex flex-col h-full overflow-scroll">
-				<div className="flex items-center sticky top-0 justify-between border-b bg-gray-800 text-white p-3 flex-wrap font-semibold gap-x-3 gap-y-1 text-base">
-					<div className="flex gap-x-1 items-center">
-						<img src="/logo.svg" className="bg-transparent w-[24px] h-[24px]" />
-						<div>百度统计插件生成器</div>
-					</div>
-					<Link
-						className="gap-1 mx-3 text-white"
-						size="sm"
-						href="https://tongji.baidu.com/"
-						target="_blank"
-					>
-						<AiOutlineLink /> 前往百度统计
-					</Link>
-				</div>
-				<div className="flex-1 flex flex-col h-max w-full max-w-5xl m-auto p-6 pb-12">
-					<div className="flex gap-6 flex-col items-center w-full">
-						<Textarea
-							variant="underlined"
-							label="百度统计代码（从百度统计管理中获取）"
-							isRequired
-							rows={11}
-							disableAutosize
-							placeholder={`请将您在百度统计管理后台中获取到的代码粘贴在下方后，点击生成即可。
+			<Float />
+			<div className="flex-1 flex flex-col h-max w-full max-w-5xl m-auto p-6">
+				<Alert
+					className="font-medium"
+					hideIcon
+					color="primary"
+					title="本工具用于辅助生成百度统计插件在file和chrome-extension等协议环境下【如：electron、chrome extension】能正常上报统计信息的本地插件文件。"
+				/>
+				<div className="flex gap-6 flex-col items-center w-full mt-4">
+					<Textarea
+						variant="underlined"
+						label="百度统计代码（从百度统计管理中获取）"
+						isRequired
+						rows={11}
+						disableAutosize
+						placeholder={`请将您在百度统计管理后台中获取到的代码粘贴在下方后，点击生成即可。
 代码示例如下：
 <script>
 	var _hmt = _hmt || [];
@@ -125,76 +118,71 @@ export default function Home() {
 	})();
 </script>
 `}
-							value={code}
-							onChange={(e) => setCode(e.target.value)}
-						/>
-						<Button
-							variant="solid"
-							color="primary"
-							startContent={<IoMdGitPullRequest />}
-							onClick={generateCode}
-						>
-							获取百度插件代码
-						</Button>
-						<div className="w-full">
-							<p className="font-semibold mb-3 text-lg">【如何使用】</p>
-							<div className="flex flex-col gap-3 font-semibold">
-								<p>1、将下载到的hm.js文件放置在公共目录，如：/public/hm.js</p>
-								<p>2、在index.html的head标签中添加：</p>
-								<Snippet
-									className="*:flex *:items-center *:gap-3"
-									tooltipProps={{
-										content: "点击复制",
-										color: "foreground",
-									}}
-									symbol=""
-									onCopy={() => {
-										toast.success("复制成功");
-									}}
-								>
-									<p className="whitespace-pre-wrap">{`<script type="text/javascript" src="hm.js"></script>`}</p>
-								</Snippet>
-								<p>
-									3、在chrome-extension中需要在manifest.json中添加以下配置：
-								</p>
-								<Snippet
-									className="*:flex *:items-center *:gap-3"
-									tooltipProps={{
-										content: "点击复制",
-										color: "foreground",
-									}}
-									symbol=""
-									onCopy={() => {
-										toast.success("复制成功");
-									}}
-								>
-									<p className="whitespace-pre-wrap">{`"content_security_policy": "script-src 'self' 'unsafe-eval' https://hmcdn.baidu.com; object-src 'self'"`}</p>
-								</Snippet>
-								<div className="w-full flex flex-col items-center gap-1 mt-3">
-									<Image src={"/wx.jpg"} alt="" width={150} height={150} />
-									<p className="font-semibold">欢迎关注公众号，了解更多</p>
+						value={code}
+						onChange={(e) => setCode(e.target.value)}
+					/>
+					<Button
+						variant="solid"
+						color="primary"
+						className="font-medium"
+						startContent={<IoMdGitPullRequest />}
+						onPress={generateCode}
+					>
+						获取百度插件代码
+					</Button>
+					<div className="w-full">
+						<p className="font-semibold mb-3 text-lg">【如何使用】</p>
+						<div className="flex flex-col gap-3 font-semibold">
+							<p>1、将下载到的hm.js文件放置在公共目录，如：/public/hm.js</p>
+							<p>2、在index.html的head标签中添加：</p>
+							<Snippet
+								className="*:flex *:items-center *:gap-3"
+								tooltipProps={{
+									content: "点击复制",
+									color: "foreground",
+								}}
+								symbol=""
+								onCopy={() => {
+									toast.success("复制成功");
+								}}
+							>
+								<p className="whitespace-pre-wrap">{`<script type="text/javascript" src="hm.js"></script>`}</p>
+							</Snippet>
+							<p>3、在chrome-extension中需要在manifest.json中添加以下配置：</p>
+							<Snippet
+								className="*:flex *:items-center *:gap-3"
+								tooltipProps={{
+									content: "点击复制",
+									color: "foreground",
+								}}
+								symbol=""
+								onCopy={() => {
+									toast.success("复制成功");
+								}}
+							>
+								<p className="whitespace-pre-wrap">{`"content_security_policy": "script-src 'self' 'unsafe-eval' https://hmcdn.baidu.com; object-src 'self'"`}</p>
+							</Snippet>
+							<div className="w-full flex flex-col items-center gap-1 mt-6">
+								<div className="w-[150px] h-[150px] bg-gray-200 rounded-xl flex items-center justify-center">
+									<div className="rounded-lg bg-gray-100">
+										<Image
+											src={"/wx.jpg"}
+											alt=""
+											width={140}
+											height={140}
+											className="rounded-lg"
+										/>
+									</div>
 								</div>
+								<p className="font-semibold mt-3">
+									欢迎扫码关注：GOTAB百宝箱，发现更多精彩
+								</p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div className="flex-0 z-50 p-3 w-full flex justify-center border-t bg-white flex-wrap font-semibold gap-x-3">
-				<iframe
-					src="https://ghbtns.com/github-btn.html?user=dengxiwang&repo=baidutongji-generator2&type=star&count=false"
-					width="52.5px"
-					height="21px"
-					className="border-none overflow-hidden"
-				/>
-				<p>
-					本服务由
-					<Link size="sm" href="https://www.gotab.cn" target="_blank">
-						©gotab.cn
-					</Link>
-					提供
-				</p>
-				<p>💼 业务联系：dengxiwang@aliyun.com</p>
-			</div>
+			<BottomArea />
 			<Modal
 				isOpen={isOpen}
 				onOpenChange={onOpenChange}

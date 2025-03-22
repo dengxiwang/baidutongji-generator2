@@ -2,7 +2,6 @@ import Provider from "@/components/provider";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Script from "next/script";
-import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -32,10 +31,7 @@ export default function RootLayout({
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
-				<Provider>
-					<Toaster />
-					{children}
-				</Provider>
+				<Provider>{children}</Provider>
 			</body>
 			<Script strategy="lazyOnload">
 				{`
