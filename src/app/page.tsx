@@ -90,11 +90,14 @@ export default function Home() {
 	}
 
 	return (
-		<div className="flex flex-col h-full">
+		<div className="flex flex-col h-full flex-1">
 			<Float />
 			<div className="flex-1 flex flex-col h-max w-full max-w-5xl m-auto p-6">
 				<Alert
 					className="font-medium"
+					style={{
+						flex: 0,
+					}}
 					hideIcon
 					color="primary"
 					title="本工具用于辅助生成百度统计插件在file和chrome-extension等协议环境下【如：electron、chrome extension】能正常上报统计信息的本地插件文件。"

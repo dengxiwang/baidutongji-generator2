@@ -6,7 +6,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
 	const router = useRouter();
 
 	return (
-		<HeroUIProvider navigate={router.push} className="h-full">
+		<HeroUIProvider navigate={router.push} className="h-full flex-1 flex flex-col">
 			<ToastProvider
 				placement="top-center"
 				toastOffset={18}
