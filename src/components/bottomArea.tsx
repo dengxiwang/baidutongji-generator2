@@ -13,7 +13,7 @@ export default function BottomArea() {
 						target="_blank"
 						className="cursor-pointer"
 					>
-						官网
+						🚗 &nbsp;GOTAB 百宝箱
 					</Link>
 					<Divider orientation="vertical" className="h-[14px]" />
 					<Link
