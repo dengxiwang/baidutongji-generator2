@@ -169,7 +169,7 @@ export default function Home() {
 								<div className="w-[150px] h-[150px] bg-gray-200 rounded-xl flex items-center justify-center">
 									<div className="rounded-lg bg-gray-100">
 										<Image
-											src={"/wx.jpg"}
+											src={"https://www.gotab.cn/images/wx.webp"}
 											alt=""
 											width={140}
 											height={140}

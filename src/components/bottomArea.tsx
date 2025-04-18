@@ -6,7 +6,7 @@ export default function BottomArea() {
 		<section className="min-h-16 mt-3 border-t px-6 py-3 flex font-semibold items-center">
 			<div className="max-w-5xl h-full mx-auto flex flex-wrap-reverse w-full justify-between items-center gap-x-6 gap-y-3">
 				<p className="opacity-40">© 百度统计插件版本生成器</p>
-				<div className="flex items-center h-full gap-3">
+				<div className="flex items-center h-full gap-3 flex-wrap">
 					<Link
 						size="sm"
 						href="https://gotab.cn"
