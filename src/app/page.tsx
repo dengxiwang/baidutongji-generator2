@@ -177,9 +177,7 @@ export default function Home() {
 										/>
 									</div>
 								</div>
-								<p className="font-semibold mt-3">
-									欢迎扫码关注：GOTAB百宝箱，发现更多精彩
-								</p>
+								<p className="font-semibold mt-3">欢迎扫码关注，发现更多精彩</p>
 							</div>
 						</div>
 					</div>
