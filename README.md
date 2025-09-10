@@ -4,7 +4,7 @@
 
 ## 项目说明
 
-本项目在<https://github.com/krapnikkk/baidutongji-generator>的思路下，使用 nextjs + nextui 重构了页面，更现代化、精致一些，并将项目放在自己服务器上，避免 github 被墙导致的页面加载速度慢的问题。
+本项目在 <https://github.com/krapnikkk/baidutongji-generator> 的思路下，使用 NextJs + HeroUI 重构了页面，更现代化、精致一些，并将项目放在自己服务器上，避免 github 被墙导致的页面加载速度慢的问题。
 
 ## 在线地址
 
