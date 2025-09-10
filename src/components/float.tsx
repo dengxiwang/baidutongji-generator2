@@ -1,10 +1,11 @@
+"use client";
 import { Button } from "@heroui/react";
 import Link from "next/link";
 import { RiBaiduFill } from "react-icons/ri";
 
 export default function Float() {
 	return (
-		<main className="block max-sm:hidden fixed right-0 top-1/2 -translate-y-1/2">
+		<main className="fixed block z-[999999] max-sm:hidden right-0 top-1/2 -translate-y-1/2">
 			<Link href="https://tongji.baidu.com/" target="_blank">
 				<Button
 					color="primary"

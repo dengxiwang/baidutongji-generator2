@@ -3,17 +3,17 @@ import BottomArea from "@/components/bottomArea";
 import Float from "@/components/float";
 import { toast } from "@/components/toast";
 import {
-    Alert,
-    Button,
-    Code,
-    Modal,
-    ModalBody,
-    ModalContent,
-    ModalFooter,
-    ModalHeader,
-    Snippet,
-    Textarea,
-    useDisclosure,
+	Alert,
+	Button,
+	Code,
+	Modal,
+	ModalBody,
+	ModalContent,
+	ModalFooter,
+	ModalHeader,
+	Snippet,
+	Textarea,
+	useDisclosure,
 } from "@heroui/react";
 import Image from "next/image";
 import { useState } from "react";
@@ -91,7 +91,6 @@ export default function Home() {
 
 	return (
 		<div className="flex flex-col h-full flex-1">
-			<Float />
 			<div className="flex-1 flex flex-col h-max w-full max-w-5xl m-auto p-6">
 				<Alert
 					className="font-medium"
@@ -184,6 +183,7 @@ export default function Home() {
 				</div>
 			</div>
 			<BottomArea />
+			<Float />
 			<Modal
 				isOpen={isOpen}
 				onOpenChange={onOpenChange}
