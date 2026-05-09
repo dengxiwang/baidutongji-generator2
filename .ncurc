@@ -1,4 +1,6 @@
 {
     "upgrade": false,
-    "reject": []
+    "reject": [
+        "@heroui/react"
+    ]
 }
